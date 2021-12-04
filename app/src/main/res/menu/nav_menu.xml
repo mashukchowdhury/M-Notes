@@ -6,15 +6,15 @@
         <menu>
             <item
                 android:id="@+id/notes"
-                android:icon="@android:color/holo_purple"
+                android:icon="@drawable/ic_baseline_notes_24"
                 android:title="Notes" />
             <item
                 android:id="@+id/addNote"
-                android:icon="@android:color/holo_purple"
+                android:icon="@drawable/ic_baseline_add_24"
                 android:title="Add Note" />
             <item
                 android:id="@+id/sync"
-                android:icon="@android:color/holo_purple"
+                android:icon="@drawable/ic_baseline_cloud_sync_24"
                 android:title="Sync Notes" />
         </menu>
     </item>
@@ -22,20 +22,20 @@
         <menu>
             <item
                 android:id="@+id/rating"
-                android:icon="@android:color/holo_purple"
+                android:icon="@drawable/ic_baseline_star_rate_24"
                 android:title="Rate App" />
 
             <item
                 android:id="@+id/shareapp"
-                android:icon="@android:color/holo_purple"
-                android:title="shareapp" />
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share App" />
         </menu>
     </item>
     <item android:title="Logout">
         <menu>
             <item
                 android:id="@+id/logout"
-                android:icon="@android:color/holo_purple"
+                android:icon="@drawable/ic_baseline_keyboard_capslock_24"
                 android:title="Logout" />
         </menu>
     </item>
