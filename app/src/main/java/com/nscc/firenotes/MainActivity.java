@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.nscc.firenotes.model.Adapter;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         adapter = new com.nscc.firenotes.model.Adapter(titles,content);
         noteLists.setLayoutManager(new LinearLayoutManager(this));
+        /*noteLists.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));*/
         noteLists.setAdapter(adapter);
 
 

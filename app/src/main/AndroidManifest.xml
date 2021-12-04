@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FireNotes">
         <activity
+            android:name=".NoteDetails"
+            android:exported="false"
+            android:label="@string/title_activity_note_details"
+            android:theme="@style/Theme.FireNotes.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.FireNotes.NoActionBar">
@@ -19,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
