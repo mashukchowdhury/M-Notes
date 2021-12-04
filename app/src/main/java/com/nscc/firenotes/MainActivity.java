@@ -13,9 +13,14 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.nscc.firenotes.model.Adapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle toggle;
     NavigationView nav_view;
     RecyclerView noteLists;
+    Adapter adapter;  //choose adapter under Model
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +39,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         noteLists = findViewById(R.id.noteList);
+
         drawerLayout = findViewById(R.id.drawer);
         nav_view = findViewById(R.id.nav_view);
         nav_view.setNavigationItemSelectedListener(this);
+
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
+
+        List<String> titles = new ArrayList<>();
+        List<String> content = new ArrayList<>();
+
+        titles.add("First Note Title.");
+        content.add("First Note Content Sample");
+
+        titles.add("Second Note Title.");
+        content.add("Second Note Content Sample");
+
+        titles.add("Third Note Title.");
+        content.add("Third Note Content Sample");
+
+        adapter = new com.nscc.firenotes.model.Adapter(titles,content);
+        noteLists.setLayoutManager(new LinearLayoutManager(this));
+        noteLists.setAdapter(adapter);
+
+
     }
 
     @Override

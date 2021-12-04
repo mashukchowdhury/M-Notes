@@ -1,8 +1,10 @@
-package model;
+package com.nscc.firenotes.model;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,7 +31,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position)
+    {
+        holder.noteTitle.setText(titles.get(position));
+        holder.noteContent.setText(content.get(position));
+
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),"The item has been clicked",Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -39,10 +51,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView noteTitle, noteContent;
+        View view;
 
-
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView)
+        {
             super(itemView);
+            noteTitle = itemView.findViewById(R.id.titles);
+            noteContent = itemView.findViewById((R.id.content));
+            view = itemView;
         }
     }
 }
